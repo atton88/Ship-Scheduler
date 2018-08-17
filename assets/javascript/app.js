@@ -51,7 +51,7 @@ $(document).ready(function() {
 	database.ref().on("child_added", function(childSnapshot) {
 
 		// Get current time and append
-		$("#timeText").text(moment().format("HH:mm a"));
+		$("#timeText").text(moment().format("hh:mm a"));
 
 		// console.log(childSnapshot.val()); //test
 		
@@ -67,25 +67,11 @@ $(document).ready(function() {
 		var timeNow = moment();
 		startTime = moment(startTime, "HHmm");
 
+		// if start time is negative, add frequency to start time until non-negative
 		if (timeNow.diff(startTime, "m") > 0) {
-			startTime.add(frequency, "m");
-
 			while (timeNow.diff(startTime, "m") > 0) {
 				startTime.add(frequency, "m");
-
 			}
-			console.log(timeNow.format("HHmm"));
-			console.log(startTime.format("HHmm"));
-			console.log(timeNow.diff(startTime, "m"));
-
-		}
-		else if (timeNow.diff(startTime, "m") < 0) {
-			while(timeNow.diff(startTime, "m") < 0) {
-				startTime.subtract(frequency, "m");
-			}
-			console.log(timeNow.format("HHmm"));
-			console.log(startTime.format("HHmm"));
-			console.log(startTime.diff(timeNow, "m"));
 		}
 
 		// Append routes to table
@@ -94,23 +80,9 @@ $(document).ready(function() {
 			$("<td>").text(destination),
 			$("<td>").text(frequency),
 			$("<td>").text(startTime.format("hh:mm a")),
-			$("<td>").text(startTime.diff(timeNow, "m") + 1)
+			// Add 1 and Math.floor to solve rounding problems
+			$("<td>").text(Math.floor(startTime.diff(timeNow, "m") + 1))
 		)
-		$("#routeText").append(newRoute);
+		$("#routeText").append(newRoute); // Append new div
 	})
-
-
-
-
-
-
 })
-
-            /////////////////
-            // Append Gifs //
-            /////////////////
-
-    
-    ///////////////////////
-    // Styling functions //
-    ///////////////////////
