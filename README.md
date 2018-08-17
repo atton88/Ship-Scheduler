@@ -12,8 +12,8 @@ Created a psychic game where the user tries to guess a random letter in 9 guesse
 
 # Images
 
-![Page](assets/images/Capture1.png)
-![Add Route](assets/images/Capture2.png)
+![Page](assets/images/Capture1.PNG)
+![Add Route](assets/images/Capture2.PNG)
 
 
 # technology used
