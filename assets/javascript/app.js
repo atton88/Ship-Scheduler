@@ -51,7 +51,7 @@ $(document).ready(function() {
 	database.ref().on("child_added", function(childSnapshot) {
 
 		// Get current time and append
-		$("#timeText").text(moment().format("HHmm"));
+		$("#timeText").text(moment().format("HH:mm a"));
 
 		// console.log(childSnapshot.val()); //test
 		
@@ -68,7 +68,7 @@ $(document).ready(function() {
 		startTime = moment(startTime, "HHmm");
 
 		if (timeNow.diff(startTime, "m") > 0) {
-							startTime.add(frequency, "m");
+			startTime.add(frequency, "m");
 
 			while (timeNow.diff(startTime, "m") > 0) {
 				startTime.add(frequency, "m");
@@ -77,12 +77,6 @@ $(document).ready(function() {
 			console.log(timeNow.format("HHmm"));
 			console.log(startTime.format("HHmm"));
 			console.log(timeNow.diff(startTime, "m"));
-			// console.log("starttime new:" + startTime);
-			// startTime.add(frequency, "m");
-
-			// console.log("starttime new:" + startTime);
-
-			// console.log(timeNow.diff(startTime, "m"));
 
 		}
 		else if (timeNow.diff(startTime, "m") < 0) {

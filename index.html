@@ -22,14 +22,16 @@ index.html
     <title>Route Schedules</title>
   </head>
 
-  <body class="text-center bg-light text-dark container-fluid">
+  <body class="text-center bg-dark text-dark container-fluid">
     
      <!-- Jumbotron -->
-     <div class="jumbotron-fluid bg-warning rounded">
-      <h1 class="display-4">Scorpion Fleet Shipyard</h1>
-      <h1 class="display-4">Departure Schedules</h1>
-      <p class="lead">Simple Route schedule application.</p>
-      <hr class="my-4">
+     <div class="jumbotron-fluid bg-secondary rounded">
+			 <div id="title">
+					<img src="assets/images/logo1.png" alt="Scorpion Shipyard" class="m-3" width="80%">
+					<img src="assets/images/logo2.png" alt="Departure Schedule" width="60%">
+			 </div>
+			<hr class="my-4">
+			<p>Simple Route schedule application.</p>
 			<p>Input docking information to see next available departure.</p>
 			<h1 id="timeText" class="display-4">Time:</h1>
 
@@ -38,11 +40,11 @@ index.html
 
     <!-- Current Route schedule table -->
     <div class="card">
-      <h5 class="card-header bg-warning rounded text-left text-dark font-weight-bold">
+      <h5 class="card-header bg-secondary rounded text-left text-dark font-weight-bold">
         Current Route Schedules
       </h5>
-      <div class="card-body border border-warning">
-        <table class="table table-hover table-warning text-dark table-bordered">
+      <div class="card-body border border-secondary">
+        <table class="table table-hover table-secondary text-dark table-bordered">
           <thead class="font-weight-bold">
             <tr>
               <th scope="col">Route Name:</th>
@@ -64,14 +66,13 @@ index.html
       </div>
     </div>
     <br>
-    <br>
 
     <!-- Add Route form -->
         <div class="card">
-          <h5 class="card-header bg-warning rounded text-left text-dark font-weight-bold">
+          <h5 class="card-header bg-secondary rounded text-left text-dark font-weight-bold">
             Add Route
           </h5>
-          <div class="card-body border border-warning">
+          <div class="card-body border border-secondary">
 
             <form id="addForm" class="text-left"> <!-- Start Form -->
                 <div class="form-group">
@@ -90,7 +91,7 @@ index.html
                   <label for="frequencyInput">Frequency (min)</label>
                   <input type="number" class="form-control" id="frequencyInput" placeholder="10">
                 </div>
-              <button type="submit" id="submitButton" class="btn btn-warning border border-secondary">Submit</button>
+              <button type="submit" id="submitButton" class="btn btn-secondary border border-secondary">Submit</button>
             </form> <!-- End Form-->
           </div>
         </div>
